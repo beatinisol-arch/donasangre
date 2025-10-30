@@ -1,0 +1,395 @@
+ RESETEO Y FUENTES */
+/* =====================================================
+   🎨 ESTILOS GENERALES
+===================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: #060606;
+  background-color: #fffafa;
+}
+
+/* =====================================================
+   🩸 ESTRUCTURA PRINCIPAL
+===================================================== */
+.contenedor {
+  display: flex;
+  min-height: 100vh;
+  flex-wrap: wrap;
+}
+
+/* =====================================================
+   🔹 COLUMNA IZQUIERDA (SIDEBAR)
+===================================================== */
+.sidebar {
+  position: relative;
+  width: 20%;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #c6c5c5, #b4b3b3);
+  color: rgb(255, 255, 255);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+.sidebar img {
+  width: 100%;
+  height: auto;
+  border-radius: 1px;
+  margin-bottom: 1rem;
+  z-index: 2;
+  object-fit: cover;
+}
+
+.sidebar .mensaje {
+  z-index: 2;
+}
+
+.sidebar .overlay {
+  position: absolute;
+  inset: 0;
+  background: url('gotas.png') center/cover no-repeat;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+/* =====================================================
+   🔸 CONTENIDO PRINCIPAL
+===================================================== */
+.principal {
+  flex: 1;
+  padding: 2rem 3rem;
+}
+
+/* =====================================================
+   🔸 ENCABEZADO
+===================================================== */
+header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  padding: 2.5rem 1rem;
+  background: linear-gradient(135deg, #b30000, #7a0000);
+  color: white;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+header h1 {
+  color: #fff;
+  font-size: 2.5rem;
+  letter-spacing: 1.5px;
+}
+
+header p {
+  color: #ffe6e6;
+  font-style: italic;
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+}
+
+/* =====================================================
+   🔸 MENÚ DE NAVEGACIÓN
+===================================================== */
+.menu {
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background-color: #c1121f;
+  text-align: center;
+  padding: 10px; rem 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  transition: box-shadow 0.3s ease;
+}
+
+.menu.scrolled {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  display: inline-block;
+  margin: 0 1rem;
+}
+
+.menu .boton {
+  background-color: #f8f9fa;
+  color: #c1121f;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.6rem 1.2rem;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.menu .boton:hover {
+  background-color: #c6bfc1;
+  color: #780000;
+  transform: scale(1.05);
+}
+
+/* =====================================================
+   🔸 SECCIONES DE CONTENIDO
+===================================================== */
+section {
+  margin-bottom: 3rem;
+}
+
+h2 {
+  color: #b30000;
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  border-left: 5px solid #b30000;
+  padding-left: 10px;
+}
+
+p, li {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+blockquote {
+  background-color: #ffeaea;
+  border-left: 4px solid #b30000;
+  padding: 1rem;
+  font-style: italic;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+/* =====================================================
+   🔸 IMÁGENES
+===================================================== */
+.imagen-ajustada {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin: 1.5rem 0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* =====================================================
+   🔸 BOTONES
+===================================================== */
+.botones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin: 1.5rem 0;
+}
+
+.btn {
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-rojo {
+  background-color: #b30000;
+  color: white;
+}
+
+.btn-blanco {
+  background-color: white;
+  color: #b30000;
+  border: 2px solid #b30000;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* =====================================================
+   🔸 GALERÍA SOLIDARIA
+===================================================== */
+.galeria {
+  text-align: center;
+  padding: 2rem;
+}
+
+.galeria h2 {
+  color: #b32424;
+  font-family: 'Raleway', sans-serif;
+  margin-bottom: 0.5rem;
+}
+
+.galeria .intro {
+  color: #555;
+  font-style: italic;
+  margin-bottom: 2rem;
+}
+
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.foto {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.foto img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.foto:hover img {
+  transform: scale(1.08);
+}
+
+.descripcion {
+  background: rgba(215, 55, 55, 0.9);
+  color: white;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 0.9rem;
+  transform: translateY(100%);
+  transition: transform 0.5s ease;
+}
+
+.foto:hover .descripcion {
+  transform: translateY(0);
+}
+
+/* =====================================================
+   🔸 FOOTER CON BOTONES
+===================================================== */
+footer {
+  text-align: center;
+  border-top: 3px solid #b30000;
+  background-color: #fff5f5;
+  padding: 2rem 1rem;
+  border-radius: 12px 12px 0 0;
+  color: #333;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+footer h3 {
+  color: #b30000;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+footer hr {
+  border: none;
+  border-top: 1px solid #ffcccc;
+  width: 60%;
+  margin: 1.5rem auto;
+}
+
+/* 🔘 Contenedor de botones */
+.botones-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+/* 🎯 Botones del footer */
+.btn-footer {
+  display: inline-block;
+  padding: 0.6rem 1.4rem;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+/* 🔴 Botón rojo */
+.btn-rojo {
+  background-color: #b30000;
+  color: white;
+}
+
+.btn-rojo:hover {
+  background-color: #7a0000;
+  transform: scale(1.05);
+}
+
+/* ⚪ Botón blanco con borde rojo */
+.btn-blanco {
+  background-color: white;
+  color: #b30000;
+  border: 2px solid #b30000;
+}
+
+.btn-blanco:hover {
+  background-color: #ffe6e6;
+  transform: scale(1.05);
+}
+
+/* 🔗 Enlaces del footer */
+.link-rojo {
+  color: #b30000;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.link-rojo:hover {
+  color: #7a0000;
+  text-decoration: underline;
+}
+
+
+/* =====================================================
+   📱 RESPONSIVE DESIGN
+===================================================== */
+@media (max-width: 900px) {
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .sidebar img {
+    width: 40%;
+  }
+
+  .principal {
+    padding: 1.5rem;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+}
